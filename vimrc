@@ -23,7 +23,6 @@ Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tpope/vim-fugitive'
 
 " Markdown
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
 " Scala
