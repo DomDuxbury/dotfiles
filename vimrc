@@ -4,6 +4,23 @@
 "        URL: http://github.com/domduxbury/dotfiles                          "
 "                                                                            "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General {{{
+
+set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
+filetype plugin on
+set backspace=2 " make backspace work like most other apps
+source ~/dotfiles/vimrc_modules/neocomplete.rc.vim
+
+" File searching
+set path+=**
+nnoremap <leader>f :find *.
+
+" Display all matching files
+set wildmenu
+
+set modelines=1
+
+" }}}
 " Plugins {{{
 
 filetype off
@@ -22,32 +39,12 @@ Plugin 'tmux-plugins/vim-tmux'
 " Git Plugins
 Plugin 'tpope/vim-fugitive'
 
-" Markdown
-Plugin 'plasticboy/vim-markdown'
-
 " Scala
 Plugin 'derekwyatt/vim-scala'
 Plugin 'ensime/ensime-vim'
 
 call vundle#end()
 filetype plugin indent on
-
-" }}}
-" General {{{
-
-set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
-filetype plugin on
-set backspace=2 " make backspace work like most other apps
-source ~/dotfiles/vimrc_modules/neocomplete.rc.vim
-
-" File searching
-set path+=**
-nnoremap <leader>f :find *.
-
-" Display all matching files
-set wildmenu
-
-set modelines=1
 
 " }}}
 " Events {{{
