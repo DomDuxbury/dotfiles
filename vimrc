@@ -1,20 +1,11 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "   Filename: .vimrc                                                         "
-" Maintainer: Michael J. Smalley <michaeljsmalley@gmail.com>                 "
-"        URL: http://github.com/michaeljsmalley/dotfiles                     "
+" Maintainer: Dominic Duxbury                                                "
+"        URL: http://github.com/domduxbury/dotfiles                          "
 "                                                                            "
-"                                                                            "
-" Sections:                                                                  "
-"   00. Plugins ................. Setup Vim Plugins
-"   01. General ................. General Vim behavior                       "
-"   02. Events .................. General autocmd events                     "
-"   03. Theme/Colors ............ Colors, fonts, etc.                        "
-"   04. Vim UI .................. User interface behavior                    "
-"   05. Text Formatting/Layout .. Text, tab, indentation related             "
-"   06. Custom Commands ......... Any custom command aliases                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 00. Plugins                                                                "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins {{{
+
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -42,9 +33,9 @@ Plugin 'ensime/ensime-vim'
 call vundle#end()
 filetype plugin indent on
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 01. General                                                                "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" General {{{
+
 set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
 filetype plugin on
 set backspace=2 " make backspace work like most other apps
@@ -57,9 +48,10 @@ nnoremap <leader>f :find *.
 " Display all matching files
 set wildmenu
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 02. Events                                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set modelines=1
+
+" }}}
+" Events {{{
 filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 
 " In Makefiles DO NOT use spaces instead of tabs
@@ -69,10 +61,8 @@ autocmd FileType ruby setlocal sw=2 ts=2 sts=2
 
 " Enable omnicompletion (to use, hold Ctrl+X then Ctrl+O while in Insert mode.
 set ofu=syntaxcomplete#Complete
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 03. Theme/Colors                                                           "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Colours / Theme {{{
 set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
 colorscheme molokai       " set colorscheme
@@ -100,10 +90,8 @@ else
 endif
 
 set pastetoggle=<F2>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 04. Vim UI                                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Interface {{{
 set number                " show line numbers
 set numberwidth=6         " make the number gutter 6 characters wide
 set cul                   " highlight current line
@@ -115,10 +103,8 @@ set ruler                 " Always show info along bottom.
 set showmatch
 set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
 set visualbell
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 05. Text Formatting/Layout                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Text Formatting/Layout {{{
 set autoindent            " auto-indent
 set tabstop=2             " tab spacing
 set softtabstop=2         " unify
@@ -128,10 +114,8 @@ set expandtab             " use spaces instead of tabs
 set smartindent           " automatically insert one extra level of indentation
 "set smarttab             " use tabs at the start of a line, spaces elsewhere
 set nowrap                " don't wrap text
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 06. Custom Commands, bindings and abbreviations                                                     "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" {{{ Custom Commands, bindings and abbreviations
 " Map my leader as ,
 let mapleader = ","
 let maplocalleader = "-"
@@ -140,6 +124,9 @@ let maplocalleader = "-"
 inoremap jk <esc>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
+
+" Use space to open folds
+nnoremap <space> za
 
 " Create a mapping to open this file
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -184,19 +171,8 @@ au FileType scala nnoremap <localleader>di :EnDocBrowse<CR>
 au FileType scala nnoremap <localleader>t :EnTypeCheck<CR>
 " New function with localLeader {
 au FileType scala nnoremap <localleader>{ odef () = {<CR>}<esc>bbbi
-" SBT
-" required to disable syntastic checking.
-" augroup filetype_sbt
-"   autocmd!
-"   autocmd BufNewFile,BufRead *.sbt set filetype=sbt
-"   autocmd FileType sbt setlocal syntax=scala
-" augroup END
-" Prettify JSON files making the easier to read
-"command PrettyJSON %!python -m json.tool
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 07. Syntastic                                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" {{{ Syntastic
 "
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -206,3 +182,14 @@ au FileType scala nnoremap <localleader>{ odef () = {<CR>}<esc>bbbi
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
+"
+" SBT
+" required to disable syntastic checking.
+" augroup filetype_sbt
+"   autocmd!
+"   autocmd BufNewFile,BufRead *.sbt set filetype=sbt
+"   autocmd FileType sbt setlocal syntax=scala
+" augroup END
+" Prettify JSON files making the easier to read
+" }}}
+" vim:foldmethod=marker:foldlevel=0
