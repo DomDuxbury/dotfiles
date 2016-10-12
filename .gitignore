@@ -4,3 +4,4 @@ vim/.netrwhist
 chef/
 private
 tmux/resurrect
+*.swp
