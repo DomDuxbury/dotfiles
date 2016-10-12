@@ -36,5 +36,4 @@ cd ~/dotfiles
 Credits
 -------
 
-Built on and inspired by Micheal J Smalley
-Orignal Repo: https://github.com/michaeljsmalley/dotfiles
+Built on https://github.com/michaeljsmalley/dotfile by Micheal J Smalley
