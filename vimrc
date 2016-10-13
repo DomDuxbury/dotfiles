@@ -13,7 +13,6 @@ source ~/dotfiles/vimrc_modules/neocomplete.rc.vim
 
 " File searching
 set path+=**
-nnoremap <leader>f :find *.
 
 " Display all matching files
 set wildmenu
@@ -144,12 +143,11 @@ nnoremap <leader><space> viw
 " Surround a word with quotes
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 
-" Comment out multiple lines
-autocmd FileType scala,javascript vnoremap <localleader>c I//<esc>
+" Search for a file by name
+nnoremap <leader>f :find *.
 
-" Comment out single line
-autocmd FileType scala,javascript nnoremap <buffer> <localleader>c I//<esc>
-autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+" Search for a file by grep
+nnoremap <leader>g :grep *.
 
 " Abbreviate email
 iabbrev @@ domduxbury@hotmail.com
