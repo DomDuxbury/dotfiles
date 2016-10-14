@@ -17,7 +17,18 @@ set path+=**
 " Display all matching files
 set wildmenu
 
+" Read the bottom of this file for folding formatting
 set modelines=1
+
+" Handle swp, undo and backup files in ~/.vim
+" Set swap files dir
+set dir=~/.vim/_swap/
+" Turn on backup files and set the directory
+set backup
+set backupdir=~/.vim/_backup/
+" Turn on undo files and set the directory
+set undofile
+set undodir=~/.vim/_undo/
 
 " }}}
 " Plugins {{{
@@ -147,7 +158,11 @@ nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>f :find *.
 
 " Search for a file by grep
-nnoremap <leader>g :grep *.
+nnoremap <leader>g :vimgrep
+
+" Navigate files found
+nnoremap <leader>n :cnext<cr>
+nnoremap <leader>p :cprev<cr>
 
 " Abbreviate email
 iabbrev @@ domduxbury@hotmail.com
@@ -159,12 +174,12 @@ autocmd BufWritePre *.html :normal gg=G
 autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_gb
 
 " Scala ensime settings
-au FileType scala nnoremap <localleader>df :EnDeclarationSplit<CR>
-au FileType scala nnoremap <localleader>r :EnRename<CR>
-au FileType scala nnoremap <localleader>di :EnDocBrowse<CR>
-au FileType scala nnoremap <localleader>t :EnTypeCheck<CR>
-" New function with localLeader {
+au FileType scala nnoremap <buffer> <silent> <localleader>ds :EnDeclarationSplit<CR>
+au FileType scala nnoremap <buffer> <silent> <localleader>db :EnDocBrowse<CR>
+au FileType scala nnoremap <buffer> <silent> <LocalLeader>r :EnRename<CR>
+" New function with localLeader 
 au FileType scala nnoremap <localleader>{ odef () = {<CR>}<esc>bbbi
+au FileType scala nnoremap <localleader>g :vimgrep <C-R><C-W> */**<cr>
 " }}}
 " {{{ Syntastic
 "
