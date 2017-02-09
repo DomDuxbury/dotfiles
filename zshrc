@@ -84,4 +84,7 @@ path+=('/home/duxbug/.nvm/versions/node/v6.3.0/bin')
 path+=('/home/duxbug/programs/scala-2.11.8/bin')
 path+=('/home/duxbug/programs/activator/bin')
 path+=('/usr/local/spark/bin')
+path+=('/usr/lib/postgresql/9.6/bin')
 export path
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
