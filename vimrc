@@ -30,6 +30,8 @@ set backupdir=~/.vim/_backup/
 set undofile
 set undodir=~/.vim/_undo/
 
+set viminfo =
+
 " }}}
 " Plugins {{{
 
@@ -46,11 +48,19 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tmux-plugins/vim-tmux'
 
+" Latex Plugins
+Plugin 'lervag/vimtex'
+
 " Git Plugins
 Plugin 'tpope/vim-fugitive'
 
 " Scala
 Plugin 'derekwyatt/vim-scala'
+
+" Javascript
+Plugin 'ruanyl/coverage.vim'
+let g:coverage_json_report_path = 'coverage/coverage.json'
+let g:coverage_auto_start = 0
 
 call vundle#end()
 filetype plugin indent on
@@ -130,6 +140,9 @@ inoremap jk <esc>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 
+" Map ; to : for faster quitting and writing
+nnoremap ; :
+
 " Use space to open folds
 nnoremap <space> za
 
@@ -173,12 +186,16 @@ autocmd BufWritePre *.html :normal gg=G
 autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_gb
 
 " Scala ensime settings
-au FileType scala nnoremap <buffer> <silent> <localleader>ds :EnDeclarationSplit<CR>
-au FileType scala nnoremap <buffer> <silent> <localleader>db :EnDocBrowse<CR>
+au FileType scala nnoremap <buffer> <silent> <LocalLeader>ds :EnDeclarationSplit<CR>
+au FileType scala nnoremap <buffer> <silent> <LocalLeader>db :EnDocBrowse<CR>
 au FileType scala nnoremap <buffer> <silent> <LocalLeader>r :EnRename<CR>
 " New function with localLeader 
 au FileType scala nnoremap <localleader>{ odef () = {<CR>}<esc>bbbi
 au FileType scala nnoremap <localleader>g :vimgrep <C-R><C-W> */**<cr>
+
+" Latex bindings
+au FileType tex nnoremap <localleader>wc :VimtexCountWords<cr>
+
 " }}}
 " {{{ Syntastic
 "
