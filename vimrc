@@ -47,6 +47,7 @@ Plugin 'shougo/neocomplete.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'rust-lang/rust.vim'
 
 " Latex Plugins
 Plugin 'lervag/vimtex'
