@@ -30,6 +30,14 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+# Install vundle 
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Make vim backup swap and undo folders
+mkdir ~/.vim/_swap
+mkdir ~/.vim/_backup
+mkdir ~/.vim/_undo
+
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then

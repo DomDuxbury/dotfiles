@@ -51,7 +51,6 @@ Plugin 'tpope/vim-fugitive'
 
 " Scala
 Plugin 'derekwyatt/vim-scala'
-Plugin 'ensime/ensime-vim'
 
 call vundle#end()
 filetype plugin indent on
