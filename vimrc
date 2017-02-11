@@ -47,6 +47,7 @@ Plugin 'shougo/neocomplete.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'rust-lang/rust.vim'
 
 " Latex Plugins
 Plugin 'lervag/vimtex'
@@ -56,7 +57,6 @@ Plugin 'tpope/vim-fugitive'
 
 " Scala
 Plugin 'derekwyatt/vim-scala'
-Plugin 'ensime/ensime-vim'
 
 " Javascript
 Plugin 'ruanyl/coverage.vim'

@@ -28,7 +28,7 @@ Installation
 ------------
 
 ``` bash
-git clone git://github.com/DomDuxbury/dotfiles ~/dotfiles
+git clone git@github.com/DomDuxbury/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./makesymlinks.sh
 ```
