@@ -142,7 +142,7 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 
 " Map ; to : for faster quitting and writing
-nnoremap ; :
+" nnoremap ; :
 
 " Use space to open folds
 nnoremap <space> za
