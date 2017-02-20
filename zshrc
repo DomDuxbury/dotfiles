@@ -71,7 +71,7 @@ qfind () {
 
 qGit () {
   git add -A
-  git commit -m "$1"
+  git commit -m $1
   git push
   return 0
 }
