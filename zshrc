@@ -69,6 +69,13 @@ qfind () {
   return 0
 }
 
+qGit () {
+  git add -A
+  git commit -m "$1"
+  git push
+  return 0
+}
+
 # Custom exports
 ## Set EDITOR to /usr/bin/vim if Vim is installed
 if [ -f /usr/bin/vim ]; then
