@@ -145,6 +145,7 @@ let maplocalleader = "-"
 inoremap jk <esc>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
+nnoremap <silent> <C-S> :<C-u>update<CR>
 
 " Map ; to : for faster quitting and writing
 " nnoremap ; :

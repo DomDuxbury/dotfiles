@@ -41,6 +41,8 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile  # Read Mac .profile, if present.
 fi
 
+# Vim Alias
+alias vim="stty stop '' -ixoff ; vim"
 # Shell Aliases
 ## Git Aliases
 alias gs='git status '
