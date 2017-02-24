@@ -41,6 +41,9 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+" Colorscheme Plugin
+Bundle 'altercation/vim-colors-solarized'
+
 " General Plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'shougo/neocomplete.vim'
@@ -79,9 +82,11 @@ autocmd FileType ruby setlocal sw=2 ts=2 sts=2
 set ofu=syntaxcomplete#Complete
 " }}}
 " Colours / Theme {{{
+" let g:solarized_termcolors=256
 set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
-colorscheme molokai       " set colorscheme
+set background=dark
+colorscheme solarized       " set colorscheme
 
 " Prettify JSON files
 autocmd BufRead,BufNewFile *.json set filetype=json
@@ -140,9 +145,10 @@ let maplocalleader = "-"
 inoremap jk <esc>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
+nnoremap <silent> <C-S> :<C-u>update<CR>
 
 " Map ; to : for faster quitting and writing
-nnoremap ; :
+" nnoremap ; :
 
 " Use space to open folds
 nnoremap <space> za

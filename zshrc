@@ -28,7 +28,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx zsh-syntax-highlighting brew repo sudo knife vagrant bundler web-search)
+plugins=(zsh-256color git osx zsh-syntax-highlighting brew repo sudo knife vagrant bundler web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,6 +41,8 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile  # Read Mac .profile, if present.
 fi
 
+# Vim Alias
+alias vim="stty stop '' -ixoff ; vim"
 # Shell Aliases
 ## Git Aliases
 alias gs='git status '
@@ -66,6 +68,13 @@ alias htop='sudo htop'
 # qfind - used to quickly find files that contain a string in a directory
 qfind () {
   find . -exec grep -l -s $1 {} \;
+  return 0
+}
+
+qGit () {
+  git add -A
+  git commit -m $1
+  git push
   return 0
 }
 
