@@ -4,6 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 # Set javahome
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -96,6 +97,7 @@ path+=('/home/duxbug/programs/activator/bin')
 path+=('/usr/local/spark/bin')
 path+=('/usr/lib/postgresql/9.6/bin')
 path+=('/home/dom/.cargo/bin')
+path+=('/home/duxbug/anaconda2/bin')
 export path
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
