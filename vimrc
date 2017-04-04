@@ -61,18 +61,8 @@ Plugin 'tpope/vim-fugitive'
 " Scala
 Plugin 'derekwyatt/vim-scala'
 
-" Python
-Plugin 'jpalardy/vim-slime'
-
-" Config
-let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
-let g:slime_target = "tmux"
-let g:slime_dont_ask_default = 1
-let g:slime_paste_file = tempname()
-
 " Javascript
 Plugin 'ruanyl/coverage.vim'
-
 let g:coverage_json_report_path = 'coverage/coverage.json'
 let g:coverage_auto_start = 0
 
@@ -151,6 +141,11 @@ set nowrap                " don't wrap text
 let mapleader = ","
 let maplocalleader = "-"
 
+" Map # to paste in n or copy in V
+" to system clipboard
+nnoremap # "+p
+vnoremap # "+y
+
 " Map exit to jk, remove esc map and arrows
 inoremap jk <esc>
 nnoremap <up> <nop>
@@ -168,9 +163,6 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
 " create a mapping to source vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" create a mapping to copy and paste to system 
-nnoremap <leader>c "+
 
 " Map - and _ to move lines up and down
 noremap <leader>- ddp
@@ -215,9 +207,6 @@ au FileType scala nnoremap <localleader>g :vimgrep <C-R><C-W> */**<cr>
 
 " Latex bindings
 au FileType tex nnoremap <localleader>wc :VimtexCountWords<cr>
-
-" Slime binding
-
 
 " }}}
 " {{{ Syntastic
