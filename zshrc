@@ -43,6 +43,7 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile  # Read Mac .profile, if present.
 fi
 
+alias brew="sudo apt-get"
 # Vim Alias
 alias vim="stty stop '' -ixoff ; vim"
 # Shell Aliases

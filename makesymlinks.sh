@@ -33,6 +33,9 @@ done
 # Install vundle 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+# Install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Make vim backup swap and undo folders
 mkdir ~/.vim/_swap
 mkdir ~/.vim/_backup
