@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Set javahome
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/
 
 
 # Set name of the theme to load.
@@ -102,5 +102,5 @@ path+=('/home/duxbug/anaconda2/bin')
 export path
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-export NVM_DIR="/home/dom/.nvm"
+export NVM_DIR="/home/duckzbug/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

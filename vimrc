@@ -82,7 +82,7 @@ autocmd FileType ruby setlocal sw=2 ts=2 sts=2
 set ofu=syntaxcomplete#Complete
 " }}}
 " Colours / Theme {{{
-" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
 set background=dark
