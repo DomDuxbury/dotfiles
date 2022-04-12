@@ -4,7 +4,6 @@ ZSH=$HOME/.oh-my-zsh
 # Set javahome
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/
 
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -29,8 +28,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-256color git osx zsh-syntax-highlighting brew repo sudo knife vagrant bundler web-search)
-eval `dircolors ~/.dir_colors/dircolors`
+plugins=(git brew repo sudo knife vagrant bundler web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,8 +97,25 @@ path+=('/usr/local/spark/bin')
 path+=('/usr/lib/postgresql/9.6/bin')
 path+=('/home/dom/.cargo/bin')
 path+=('/home/duxbug/anaconda2/bin')
+path+=('/home/duxbug/.local/bin')
 export path
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export NVM_DIR="/home/duckzbug/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/duxbug/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/duxbug/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/duxbug/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/duxbug/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
