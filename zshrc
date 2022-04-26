@@ -49,7 +49,7 @@ alias vim="stty stop '' -ixoff ; vim"
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
-alias gc='git commit'
+alias gc='git commit -m'
 alias gd='git diff'
 alias go='git checkout '
 alias gk='gitk --all&'
@@ -96,7 +96,7 @@ path+=('/home/duxbug/programs/activator/bin')
 path+=('/usr/local/spark/bin')
 path+=('/usr/lib/postgresql/9.6/bin')
 path+=('/home/dom/.cargo/bin')
-path+=('/home/duxbug/anaconda2/bin')
+# path+=('/home/duxbug/anaconda2/bin')
 path+=('/home/duxbug/.local/bin')
 export path
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
@@ -104,18 +104,5 @@ export path
 export NVM_DIR="/home/duckzbug/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/duxbug/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/duxbug/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/duxbug/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/duxbug/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+export WORKON_HOME=$HOME/.virtualenvs
+source ~/.local/bin/virtualenvwrapper.sh
