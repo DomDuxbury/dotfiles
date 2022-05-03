@@ -11,9 +11,9 @@ addToKafka () {
 }
 
 startKafka () {
-  docker-compose --project-directory ~/dotfiles/kafka/ up -d
+    docker-compose --project-directory ~/dotfiles/kafka/ up -d
 }
 
 stopKafka () {
-  docker-compose --project-directory ~/dotfiles/kafka/ down
+    docker-compose --project-directory ~/dotfiles/kafka/ down
 }
