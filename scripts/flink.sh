@@ -20,3 +20,10 @@ startTaskManager () {
         --env FLINK_PROPERTIES="${FLINK_PROPERTIES}" \
         pyflink taskmanager
 }
+
+submitJob () {
+  docker exec jobmanager \
+      /opt/flink/bin/flink run \
+      -py /feature-store/src/main.py \
+      --pyFiles /feature-store/dist/job.zip,/feature-store/src
+}
