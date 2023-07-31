@@ -185,8 +185,8 @@ nnoremap <leader>f :find *.
 nnoremap <leader>g :vimgrep
 
 " Navigate files found
-nnoremap <leader>n :cnext<cr>
-nnoremap <leader>p :cprev<cr>
+nnoremap <leader>n :next<cr>
+nnoremap <leader>p :prev<cr>
 
 " Abbreviate email
 iabbrev @@ domduxbury@hotmail.com
@@ -208,6 +208,13 @@ au FileType scala nnoremap <localleader>g :vimgrep <C-R><C-W> */**<cr>
 " Latex bindings
 au FileType tex nnoremap <localleader>wc :VimtexCountWords<cr>
 
+" Find and replace across a folder
+" Open all the files in arg mode
+nnoremap <leader>r :arg */**
+nnoremap <leader>R :argdo %s/\<foo\>/bar/ge | update
+
+" Create a mapping to insert an empty line below
+nnoremap <leader>o o<esc>
 " }}}
 " {{{ Syntastic
 "

@@ -4,6 +4,7 @@ vim/.netrwhist
 vim/_backup
 vim/_swap
 vim/_undo
+vim/bundle/
 chef/
 private
 tmux/resurrect
