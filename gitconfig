@@ -1,6 +1,7 @@
 [user]
-	email = domduxbury@hotmail.com
-	name = Dominic Duxbury
+	email = [email]
+	name = [name]
+	signingkey = [key_id]
 
 [core]
   pager = delta
@@ -21,3 +22,5 @@
 	autoSetupRemote = true
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true
