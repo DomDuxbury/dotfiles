@@ -47,8 +47,8 @@ let g:python_highlight_all = 1
 " Lightweight plugin to handle comments
 Plug 'tpope/vim-commentary'
 
-" Git Co Pilot
-Plug 'github/copilot.vim'
+" " Git Co Pilot
+" Plug 'github/copilot.vim'
 
 " Linting plugin
 Plug 'w0rp/ale'
@@ -84,11 +84,16 @@ autocmd FileType make setlocal noexpandtab
 
 " }}}
 " Colours / Theme {{{
-"let g:solarized_termcolors=256
-set t_Co=256              " enable 256-color mode.
-syntax enable             " enable syntax highlighting (previously syntax on).
-"set background=dark
-"colorscheme solarized       " set colorscheme
+" Enable 24-bit color support
+if has('termguicolors')
+  set termguicolors
+endif
+
+" Set background
+set background=dark
+
+" Choose your color scheme
+colorscheme kanagawa
 
 " Prettify Markdown files
 augroup markdown
