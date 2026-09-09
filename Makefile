@@ -4,3 +4,4 @@ install:
 	- setup/install_terminalware.sh
 	- setup/setup_python.sh
 	- setup/setup_gitmoji.sh
+	- setup/configure_git.sh

@@ -1,6 +1,6 @@
 [user]
-	email = dominic.duxbury@hippodigital.co.uk
-	name = Dominic Duxbury
+	email = $GITHUB_EMAIL
+	name = $GITHUB_NAME
 	signingkey = githubcommitsigningkey
 
 [core]
