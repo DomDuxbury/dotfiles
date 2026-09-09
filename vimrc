@@ -47,9 +47,6 @@ let g:python_highlight_all = 1
 " Lightweight plugin to handle comments
 Plug 'tpope/vim-commentary'
 
-" " Git Co Pilot
-" Plug 'github/copilot.vim'
-
 " Linting plugin
 Plug 'w0rp/ale'
 let g:ale_linters = {
