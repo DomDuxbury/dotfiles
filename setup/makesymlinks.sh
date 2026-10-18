@@ -33,6 +33,14 @@ mv ~/.config/sway/config ~/.config/sway/config_old
 ln -s ~/dotfiles/sway/config ~/.config/sway/config
 echo "Installed sway config."
 
+mv ~/.config/sway/definitions.d/theme.conf ~/.config/sway/definitions.d/theme.conf_old
+ln -s ~/dotfiles/sway/theme ~/.config/sway/definitions.d/theme.conf
+echo "Installed sway theme."
+
+mv ~/.config/sway/definitions.d/theme.night.conf_ ~/.config/sway/definitions.d/theme.night.conf_old
+ln -s ~/dotfiles/sway/theme.night.conf_ ~/.config/sway/definitions.d/theme.night.conf_
+echo "Installed sway night theme."
+
 mv ~/.config/foot/foot.ini ~/.config/foot/foot.ini_old
 ln -s ~/dotfiles/sway/foot/foot.ini ~/.config/foot/foot.ini
 echo "Installed foot config."
