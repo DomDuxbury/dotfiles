@@ -29,6 +29,14 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+mv ~/.config/sway/config ~/.config/sway/config_old
+ln -s ~/dotfiles/sway/config ~/.config/sway/config
+echo "Installed sway config."
+
+mv ~/.config/foot/foot.ini ~/.config/foot/foot.ini_old
+ln -s ~/dotfiles/sway/foot/foot.ini ~/.config/foot/foot.ini
+echo "Installed foot config."
+
 # Make vim backup swap and undo folders
 mkdir -p $dir/vim
 mkdir -p $dir/vim/_swap
