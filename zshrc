@@ -105,6 +105,10 @@ cleanDocker() {
   docker rmi $(docker images | grep "none" | awk '/ / { print $3 }')
 }
 
+reinstallEverything() {
+  sudo pacman -Qnq | sudo pacman -S -
+}
+
 source ~/dotfiles/scripts/kafka.sh
 
 # The next line updates PATH for the Google Cloud SDK.

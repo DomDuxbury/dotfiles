@@ -5,6 +5,9 @@ sudo pacman -S gvim
 # Install tmux
 sudo pacman -S --noconfirm tmux
 
+# Install downgrade
+sudo pacman -S --noconfirm downgrade
+
 # Install tpm
 mkdir -p $dir/tmux/plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
