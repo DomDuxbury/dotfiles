@@ -105,8 +105,12 @@ cleanDocker() {
   docker rmi $(docker images | grep "none" | awk '/ / { print $3 }')
 }
 
-reinstallEverything() {
+reinstall_all() {
   sudo pacman -Qnq | sudo pacman -S -
+}
+
+mirrors() {
+  cat /etc/pacman.d/cachyos-mirrorlist
 }
 
 source ~/dotfiles/scripts/kafka.sh
