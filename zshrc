@@ -113,6 +113,10 @@ cleanDocker() {
   docker rmi $(docker images | grep "none" | awk '/ / { print $3 }')
 }
 
+cleanPython() {
+  pip freeze | xargs pip uninstall -y
+}
+
 source ~/dotfiles/scripts/kafka.sh
 
 # The next line updates PATH for the Google Cloud SDK.
