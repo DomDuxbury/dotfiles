@@ -1,10 +1,12 @@
 #!/bin/bash
 # Upgrade vim to a version with +clipboard 
-sudo pacman -Rs --noconfirm vim
-sudo pacman -S --noconfirm gvim
+sudo pacman -S gvim
 
 # Install tmux
 sudo pacman -S --noconfirm tmux
+
+# Install downgrade
+sudo pacman -S --noconfirm downgrade
 
 # Install tpm
 mkdir -p $dir/tmux/plugins

@@ -29,6 +29,22 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+mv ~/.config/sway/config ~/.config/sway/config_old
+ln -s ~/dotfiles/sway/config ~/.config/sway/config
+echo "Installed sway config."
+
+mv ~/.config/sway/definitions.d/theme.conf ~/.config/sway/definitions.d/theme.conf_old
+ln -s ~/dotfiles/sway/themes/theme.conf ~/.config/sway/definitions.d/theme.conf
+echo "Installed sway theme."
+
+mv ~/.config/sway/definitions.d/theme.night.conf_ ~/.config/sway/definitions.d/theme.night.conf_old
+ln -s ~/dotfiles/sway/themes/theme.night.conf_ ~/.config/sway/definitions.d/theme.night.conf_
+echo "Installed sway night theme."
+
+mv ~/.config/foot/foot.ini ~/.config/foot/foot.ini_old
+ln -s ~/dotfiles/sway/foot/foot.ini ~/.config/foot/foot.ini
+echo "Installed foot config."
+
 # Make vim backup swap and undo folders
 mkdir -p $dir/vim
 mkdir -p $dir/vim/_swap
