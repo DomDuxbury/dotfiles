@@ -110,7 +110,10 @@ reinstall_all() {
 }
 
 mirrors() {
+  cat /etc/pacman.conf | grep mirror
   cat /etc/pacman.d/cachyos-mirrorlist
+  cat /etc/pacman.d/cachyos-v3-mirrorlist
+  cat /etc/pacman.d/mirrorlist
 }
 
 source ~/dotfiles/scripts/kafka.sh
