@@ -95,19 +95,19 @@ rgv () {
   vim -q <(rg --vimgrep ${1})
 }
 
-qPrune() {
+qprune() {
   git fetch -p --all && 
     for branch in `git branch -vv | grep ': gone]' | gawk '{print $1}'`; 
       do git branch -D $branch; 
     done
 }
 
-cleanDocker() {
+clean_docker() {
   docker rm $(docker ps -q -a)
   docker rmi $(docker images | grep "none" | awk '/ / { print $3 }')
 }
 
-cleanPython() {
+clean_python() {
   pip freeze | xargs pip uninstall -y
 }
 
@@ -120,6 +120,10 @@ mirrors() {
   cat /etc/pacman.d/cachyos-mirrorlist
   cat /etc/pacman.d/cachyos-v3-mirrorlist
   cat /etc/pacman.d/mirrorlist
+}
+
+new_repo() {
+  cd ~/programs/python_templater && make setup_python_repo name=$1
 }
 
 source ~/dotfiles/scripts/kafka.sh
