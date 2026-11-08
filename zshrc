@@ -114,13 +114,16 @@ mirrors() {
   cat /etc/pacman.d/cachyos-mirrorlist
   cat /etc/pacman.d/cachyos-v3-mirrorlist
   cat /etc/pacman.d/mirrorlist
+  cat /etc/pacman.d/core-mirrorlist
+  cat /etc/pacman.d/extra-mirrorlist
 }
 
 reinstall_mirrors() {
   sudo mv /etc/pacman.d/cachyos-v3-mirrorlist /etc/pacman.d/cachyos-v3-mirrorlist.backup
   sudo mv /etc/pacman.d/cachyos-mirrorlist /etc/pacman.d/cachyos-mirrorlist.backup
   sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-  sudo cp ~/dotfiles/cachy_mirrors/* /etc/pacman.d/
+  sudo cp ~/dotfiles/pacman_setup/mirrors/* /etc/pacman.d/
+  sudo cp ~/dotfiles/pacman_setup/pacman.conf /etc/pacman.conf
 }
 
 source ~/dotfiles/scripts/kafka.sh
