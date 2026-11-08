@@ -116,6 +116,13 @@ mirrors() {
   cat /etc/pacman.d/mirrorlist
 }
 
+reinstall_mirrors() {
+  sudo mv /etc/pacman.d/cachyos-v3-mirrorlist /etc/pacman.d/cachyos-v3-mirrorlist.backup
+  sudo mv /etc/pacman.d/cachyos-mirrorlist /etc/pacman.d/cachyos-mirrorlist.backup
+  sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+  sudo cp ~/dotfiles/cachy_mirrors/* /etc/pacman.d/
+}
+
 source ~/dotfiles/scripts/kafka.sh
 
 # The next line updates PATH for the Google Cloud SDK.
