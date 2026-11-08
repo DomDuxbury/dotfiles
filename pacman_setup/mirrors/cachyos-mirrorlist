@@ -1,15 +1,8 @@
 ######################################################
 ####                                              ####
-###        CachyOS Repository Mirrorlist       ###
+####       My CachyOS Repository Mirrorlist       ####
 ####                                              ####
 ######################################################
-#### Entry in file /etc/pacman.conf:
-###     [cachyos-desktop]
-###     Include = /etc/pacman.d/cachyos-mirrorlist
-###     [cachyos]
-###     Include = /etc/pacman.d/cachyos-mirrorlist
-######################################################
-## Germany
 Server = https://aur.cachyos.org/repo/$arch/$repo
 Server = https://mirror.cachyos.org/repo/$arch/$repo
 Server = https://build.cachyos.org/repo/$arch/$repo
