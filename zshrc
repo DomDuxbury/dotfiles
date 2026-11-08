@@ -124,6 +124,8 @@ reinstall_mirrors() {
   sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
   sudo cp ~/dotfiles/pacman_setup/mirrors/* /etc/pacman.d/
   sudo cp ~/dotfiles/pacman_setup/pacman.conf /etc/pacman.conf
+  sudo rm -R /var/lib/pacman/sync
+  sudo pacman-key --init && sudo pacman-key --populate archlinux
 }
 
 source ~/dotfiles/scripts/kafka.sh
