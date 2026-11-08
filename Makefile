@@ -5,3 +5,4 @@ install:
 	- setup/setup_python.sh
 	- setup/setup_gitmoji.sh
 	- setup/configure_git.sh
+	- setup/configure_mirrors.sh
