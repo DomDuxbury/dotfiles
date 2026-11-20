@@ -138,6 +138,10 @@ new_repo() {
   cd ~/programs/python_templater && make setup_python_repo name=$1
 }
 
+remove_orphans() {
+  sudo pacman -Rns $(sudo pacman -Qdtq)
+}
+
 source ~/dotfiles/scripts/kafka.sh
 
 # The next line updates PATH for the Google Cloud SDK.
