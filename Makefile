@@ -6,3 +6,4 @@ install:
 	- setup/setup_gitmoji.sh
 	- setup/configure_git.sh
 	- setup/configure_mirrors.sh
+	- setup/configure_gnome.sh
